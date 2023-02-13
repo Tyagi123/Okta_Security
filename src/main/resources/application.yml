@@ -1,0 +1,7 @@
+okta:
+  oauth2:
+    issuer: https://trial-2248991.okta.com/oauth2/default
+    client-id:
+    client-secret:
+    redirect-uri: /authorization-code/callback
+    scope: mod_custom
