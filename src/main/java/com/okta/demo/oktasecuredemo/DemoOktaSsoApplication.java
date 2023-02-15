@@ -2,7 +2,7 @@ package com.okta.demo.oktasecuredemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
@@ -40,5 +40,10 @@ public class DemoOktaSsoApplication {
 	public String getToken(@AuthenticationPrincipal OAuth2User oAuth2User,
 							 @RegisteredOAuth2AuthorizedClient OAuth2AuthorizedClient auth2AuthorizedClient){
 		return auth2AuthorizedClient.getAccessToken().getTokenValue();
+	}
+
+	@GetMapping("/operators/hello1")
+	public String greetUser3(){
+		return "Hello from application 2";
 	}
 }
