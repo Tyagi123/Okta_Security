@@ -13,7 +13,7 @@ import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
 import org.springframework.security.web.SecurityFilterChain;
 
 @EnableWebSecurity
-//@Configuration
+@Configuration
 public class SecurityConfiguration {
 
   private final AppProperties appProperties;
@@ -39,41 +39,13 @@ public class SecurityConfiguration {
             .and()
             .oauth2ResourceServer(oauth2 -> oauth2.jwt());
 
-
-    // enables OAuth redirect login
-  //  http.oauth2Login();
-            //.clientRegistrationRepository(clientRegistrationRepository());
 //
 //    // enables OAuth Client configuration
-//    http.oauth2Client();
+    http.oauth2Client();
 
     // enables REST API support for JWT bearer tokens
-  //  http.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
+ //   http.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
 
     return http.build();
   }
-
-//  @Bean
-//  public ClientRegistrationRepository clientRegistrationRepository() {
-//    return new InMemoryClientRegistrationRepository(this.googleClientRegistration());
-//  }
-//
-//  private ClientRegistration googleClientRegistration() {
-//    return ClientRegistration.withRegistrationId("okta")
-//            .clientId(appProperties.getClientId())
-//            .clientSecret(appProperties.getClientSecret())
-//            .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
-//            .scope("profile","email","openid")
-//            .issuerUri(appProperties.getIssuer())
-//            .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
-//            .tokenUri("https://trial-2248991.okta.com/oauth2/default/v1/token")
-//            .redirectUri(appProperties.getRedirectUri())
-//            .authorizationUri("https://trial-2248991.okta.com/oauth2/default/v1/authorize")
-//            .jwkSetUri("https://trial-2248991.okta.com/oauth2/default/v1/keys")
-//            .clientName("https://trial-2248991.okta.com/oauth2/default")
-//            .userInfoUri("https://trial-2248991.okta.com/oauth2/default/v1/userinfo")
-//            .userInfoAuthenticationMethod(AuthenticationMethod.HEADER)
-//            .userNameAttributeName("sub")
-//            .build();
-//  }
   }
