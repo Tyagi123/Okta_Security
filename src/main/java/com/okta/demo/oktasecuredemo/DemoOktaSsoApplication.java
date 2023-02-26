@@ -25,7 +25,6 @@ public class DemoOktaSsoApplication {
 		return "Hello "+principal.getName()+" from application 2";
 	}
 	@GetMapping("/operators/hello")
-
 	public String greetUser1(@AuthenticationPrincipal OAuth2User oAuth2User,
 							 @RegisteredOAuth2AuthorizedClient OAuth2AuthorizedClient auth2AuthorizedClient){
 		return "Hello from application 2";
