@@ -11,9 +11,9 @@ import org.springframework.stereotype.Component;
 @ConfigurationPropertiesScan
 public class AppProperties {
     private String issuer = "https://trial-2248991.okta.com/oauth2/default";
-    private String clientId= "";
+    private String clientId= "0oa47xk8qlQAAsK4D697";
 
-    private String  clientSecret= "";
+    private String  clientSecret= "FDypRkMqr36cchazYgi5hkverorX3A9zBAfUZ_iS";
 
     private String redirectUri="{baseUrl}/authorization-code/callback";
 
